@@ -49,7 +49,10 @@ function get_temperature() {
 
             var response = JSON.parse(this.responseText);
             var temparature = response.main.temp;
+            var icon = response.weather[0].icon;
+            var src = "http://openweathermap.org/img/w/" + icon + ".png";
             document.getElementById("meteo").innerHTML = temparature;
+            document.getElementById("icon").src = src;
         }
     };
 
