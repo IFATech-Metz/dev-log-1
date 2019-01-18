@@ -7,9 +7,10 @@ var xhr = new XMLHttpRequest();
 var base_url = "http://api.openweathermap.org/data/2.5/weather";
 var base_url_5days = "http://api.openweathermap.org/data/2.5/forecast";
 
-var city = "Metz";
+//var city = document.getElementById("ville").value;
 var appid = "3c084bd74c2f77f02d6d6c30c2018bf0";
 var units = "metric";
+
 
 function get_url() {
     return base_url + "?"
@@ -25,7 +26,11 @@ function get_url_5days() {
         + "appid=" + appid;
 }
 
+
+/*
 function init_page() {
+    city = document.getElementById("ville").value;
+
     xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("url").innerHTML = get_url();
@@ -44,14 +49,13 @@ function init_page() {
     
     xhr.open("GET", get_url(), true)
     xhr.send()
-}
+}*/
 
 function get_temperature() {
     city = document.getElementById("ville").value;
 
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("url").innerHTML = get_url();
 
             // if (document.getElementById("url_visibility").checked) {
             //     document.getElementById("url").style.display = "block";
@@ -81,7 +85,6 @@ function get_temperature_5days() {
 
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("url_5days").innerHTML = get_url_5days();
 
             // if (document.getElementById("url_visibility").checked) {
             //     document.getElementById("url_5days").style.display = "block";
@@ -92,37 +95,38 @@ function get_temperature_5days() {
 
 
             var response_5days = JSON.parse(this.responseText);
-            var temperature_5days0 = response_5days.list[0].main.temp;
-            var temperature_5days1 = response_5days.list[8].main.temp;
-            var temperature_5days2 = response_5days.list[16].main.temp;
-            var temperature_5days3 = response_5days.list[24].main.temp;
-            var temperature_5days4 = response_5days.list[32].main.temp;
+            var temperature_5days_0 = response_5days.list[0].main.temp;
+            var temperature_5days_1 = response_5days.list[8].main.temp;
+            var temperature_5days_2 = response_5days.list[16].main.temp;
+            var temperature_5days_3 = response_5days.list[24].main.temp;
+            var temperature_5days_4 = response_5days.list[32].main.temp;
+            var temperature_5days_4 = response_5days.list[39].main.temp;
 
 
-            var icon0 = response_5days.list[0].weather[0].icon;
-            var src0 = "http://openweathermap.org/img/w/" + icon0 + ".png";
-            var icon1 = response_5days.list[8].weather[0].icon;
-            var src1 = "http://openweathermap.org/img/w/" + icon1 + ".png";
-            var icon2 = response_5days.list[16].weather[0].icon;
-            var src2 = "http://openweathermap.org/img/w/" + icon2 + ".png";
-            var icon3 = response_5days.list[24].weather[0].icon;
-            var src3 = "http://openweathermap.org/img/w/" + icon3 + ".png";
-            var icon4 = response_5days.list[32].weather[0].icon;
-            var src4 = "http://openweathermap.org/img/w/" + icon4 + ".png";
+            var icon_0 = response_5days.list[0].weather[0].icon;
+            var src_0 = "http://openweathermap.org/img/w/" + icon_0 + ".png";
+            var icon_1 = response_5days.list[8].weather[0].icon;
+            var src_1 = "http://openweathermap.org/img/w/" + icon_1 + ".png";
+            var icon_2 = response_5days.list[16].weather[0].icon;
+            var src_2 = "http://openweathermap.org/img/w/" + icon_2 + ".png";
+            var icon_3 = response_5days.list[24].weather[0].icon;
+            var src_3 = "http://openweathermap.org/img/w/" + icon_3 + ".png";
+            var icon_4 = response_5days.list[32].weather[0].icon;
+            var src_4 = "http://openweathermap.org/img/w/" + icon_4 + ".png";
 
 
-            document.getElementById("meteo_5days_0").innerHTML = "j+1 : " + temperature_5days0;
-            document.getElementById("meteo_5days_1").innerHTML = "j+2 : " + temperature_5days1;
-            document.getElementById("meteo_5days_2").innerHTML = "j+3 : " + temperature_5days2;
-            document.getElementById("meteo_5days_3").innerHTML = "j+4 : " + temperature_5days3;
-            document.getElementById("meteo_5days_4").innerHTML = "j+5 : " + temperature_5days4;
+            document.getElementById("meteo_5days_0").innerHTML = "Température du jour : " + temperature_5days_0;
+            document.getElementById("meteo_5days_1").innerHTML = "j+1 : " + temperature_5days_1;
+            document.getElementById("meteo_5days_2").innerHTML = "j+2 : " + temperature_5days_2;
+            document.getElementById("meteo_5days_3").innerHTML = "j+3 : " + temperature_5days_3;
+            document.getElementById("meteo_5days_4").innerHTML = "j+4 : " + temperature_5days_4;
 
 
-            document.getElementById("icon0").src = src0;
-            document.getElementById("icon1").src = src1;
-            document.getElementById("icon2").src = src2;
-            document.getElementById("icon3").src = src3;
-            document.getElementById("icon4").src = src4;
+            document.getElementById("icon_0").src = src_0;
+            document.getElementById("icon_1").src = src_1;
+            document.getElementById("icon_2").src = src_2;
+            document.getElementById("icon_3").src = src_3;
+            document.getElementById("icon_4").src = src_4;
 
         }
     };
