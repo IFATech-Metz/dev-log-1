@@ -7,8 +7,63 @@
     </head>
     <body onload="init_page()">
         <h1>Application Météo</h1>
+        <p>
+            Nom de la ville :
+            <input type = "text" id="ville" value=""><br>
+            <button type="button" onclick = "get_temperature(); get_temperature_5days()">Envoyer</button>
+            <input type="checkbox" id="url_visibility">
+        </p>
+
+        <div id="url">
+        
+        </div>
+
+        <br>
+        
+        <div id="meteo_actuelle">
+        
+        </div>
+        
         <div id="meteo">
 
         </div>
+
+        <img src="" alt="" id="icon">
+
+
+        <div id="url_5days">
+        
+        </div>
+        
+        <div id="meteo_5days_0">
+        
+        </div>
+        <img src="" alt="" id="icon0">
+
+
+        <div id="meteo_5days_1">
+        
+        </div>
+        <img src="" alt="" id="icon1">
+
+
+        <div id="meteo_5days_2">
+        
+        </div>
+        <img src="" alt="" id="icon2">
+
+
+        <div id="meteo_5days_3">
+        
+        </div>
+        <img src="" alt="" id="icon3">
+
+
+        <div id="meteo_5days_4">
+        
+        </div>
+        <img src="" alt="" id="icon4">
+
+
     </body>
 </html>
