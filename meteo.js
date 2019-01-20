@@ -34,9 +34,6 @@ function init_page() {
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
 
-            //document.getElementById("url").innerHTML = get_url();
-
-
             document.getElementById("date_now").innerHTML = day_now;
 
             var response = JSON.parse(this.responseText);
