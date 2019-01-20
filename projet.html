@@ -1,59 +1,78 @@
 <html>
-    <head>
-        <title>Météo du jour</title>
-        <meta charset="utf-8">
-        <script src="meteo.js"></script>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <h1>Application Météo</h1>
-        <p>
-            Nom de la ville :
-            <input type = "text" id="ville" value=""><br>
-            <button type="button" onclick = "get_temperature_5days()">Envoyer</button>
-            <input type="checkbox" id="url_visibility">
-        </p>
 
-        <br>
-        
-        
-        <div id="meteo">
+<head>
+    <title>Météo du jour</title>
+    <meta charset="utf-8">
+    <script src="meteo.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
 
-        </div>
+<body onload="init_page()">
+    <h1>Application Météo</h1>
 
-        <img src="" alt="" id="icon">
+    <div id="url">
+    
+    </div>
 
+    <div id="date_now">
+    
+    </div>
 
-        
-        <div id="meteo_5days_0">
-        
-        </div>
-        <img src="" alt="" id="icon_0">
+    <div id="hour_now">
+    
+    </div>
 
+    <div id="meteo">
 
-        <div id="meteo_5days_1">
-        
-        </div>
-        <img src="" alt="" id="icon_1">
+    </div>
+    <img src="" alt="" id="icon">
 
+    <hr>
 
-        <div id="meteo_5days_2">
-        
-        </div>
-        <img src="" alt="" id="icon_2">
+    <p>Nom de la ville :
+    <input type="text" id="ville" value=""><br>
+    <button type="button" onclick="get_temperature_5days()">Envoyer</button>
+    </p>
 
+    <div id="url_5days">
+    
+    </div>
 
-        <div id="meteo_5days_3">
-        
-        </div>
-        <img src="" alt="" id="icon_3">
+    <div id="meteo_5days">
+    
+    </div>
 
+    <div id="meteo_5days_0">
+    
+    </div>
+    <img src="" alt="" id="icon_0">
 
-        <div id="meteo_5days_4">
-        
-        </div>
-        <img src="" alt="" id="icon_4">
+    <div id="meteo_5days_prev">
+    
+    </div>
+    
+    <div id="meteo_5days_1">
+    
+    </div>
+    <img src="" alt="" id="icon_1">
+    
+    
+    <div id="meteo_5days_2">
+    
+    </div>
+    <img src="" alt="" id="icon_2">
+    
+    
+    <div id="meteo_5days_3">
+    
+    </div>
+    <img src="" alt="" id="icon_3">
+    
+    
+    <div id="meteo_5days_4">
+    
+    </div>
+    <img src="" alt="" id="icon_4">
+</body>
 
-
-    </body>
 </html>
