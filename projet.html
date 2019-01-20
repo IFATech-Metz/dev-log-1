@@ -2,15 +2,79 @@
 
 <head>
     <title>Météo du jour</title>
+    <meta charset="utf-8">
     <script src="meteo.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body onload="init_page()">
-    <h1>Application M&eacute;t&eacute;o</h1>
+
+    <h1>Application Météo</h1>
+
+    <div id="url">
+    
+    </div>
+
+    <div id="date_now">
+    
+    </div>
+
+    <div id="hour_now">
+    
+    </div>
+
     <div id="meteo">
 
     </div>
+    <img src="" alt="" id="icon">
+
+    <hr>
+
+    <p>Nom de la ville :
+    <input type="text" id="ville" value=""><br>
+    <button type="button" onclick="get_temperature_5days()">Envoyer</button>
+    </p>
+
+    <div id="url_5days">
+    
+    </div>
+
+    <div id="meteo_5days">
+    
+    </div>
+
+    <div id="meteo_5days_0">
+    
+    </div>
+    <img src="" alt="" id="icon_0">
+
+    <div id="meteo_5days_prev">
+    
+    </div>
+    
+    <div id="meteo_5days_1">
+    
+    </div>
+    <img src="" alt="" id="icon_1">
+    
+    
+    <div id="meteo_5days_2">
+    
+    </div>
+    <img src="" alt="" id="icon_2">
+    
+    
+    <div id="meteo_5days_3">
+    
+    </div>
+    <img src="" alt="" id="icon_3">
+    
+    
+    <div id="meteo_5days_4">
+    
+    </div>
+    <img src="" alt="" id="icon_4">
+
 </body>
 
 </html>
