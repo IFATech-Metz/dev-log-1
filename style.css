@@ -1,13 +1,20 @@
-#url{
-    color               : red;
+.col{
+    text-align: center;
+    margin: 1%;
 }
 
-#meteo{
-    background-color    : black;
-    color               : white;
-    text-align          : center;
+.container{
+    border: 10px inset black;
+    margin: 1%;
 }
 
-h1{
-    text-align          : center;
+h1, h2{
+    text-align: center;
+    padding: 1%;
+
+}
+
+p{
+    text-align: center;
+    padding:1%;
 }
