@@ -32,6 +32,7 @@ function get_url() {
 function init_page() {
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+
             //document.getElementById("url").innerHTML = get_url();
 
 
@@ -111,4 +112,5 @@ function get_temperature_5days() {
 
     xhr.open("GET", get_url_5days(), true)
     xhr.send()
+
 }
