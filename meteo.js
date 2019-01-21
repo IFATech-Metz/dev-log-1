@@ -32,7 +32,10 @@ function get_url() {
         + "appid=" + appid;
 }
 
+
+
 function init_page() {
+
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
 
@@ -67,6 +70,14 @@ function get_url_5days() {
 function get_temperature_5days() {
     city = document.getElementById("ville").value;
 
+    if ((document.getElementById("ville").value) != ""){
+        document.getElementById("chosen_city").style.display = "block";
+    }
+    else{
+        alert("Saisissez une ville !");
+    }
+
+
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
 
@@ -95,13 +106,17 @@ function get_temperature_5days() {
 
 
 
-            document.getElementById("meteo_5days").innerHTML = "Aujourd'hui à " + city + " : <br><br>";
+            document.getElementById("meteo_5days_0_date").innerHTML = "Aujourd'hui à " + city + " : <br><br>";
             document.getElementById("meteo_5days_0").innerHTML = Math.round(temperature_5days_0) + "°C";
             document.getElementById("meteo_5days_prev").innerHTML = "Prévisions des prochains jours : <br><br>";
-            document.getElementById("meteo_5days_1").innerHTML = "Demain :<br>" + Math.round(temperature_5days_1) + "°C";
-            document.getElementById("meteo_5days_2").innerHTML = "le " + (day + 2) + "/" + month + " :<br>" + Math.round(temperature_5days_2) + "°C";
-            document.getElementById("meteo_5days_3").innerHTML = "le " + (day + 3) + "/" + month + " :<br>" + Math.round(temperature_5days_3) + "°C";
-            document.getElementById("meteo_5days_4").innerHTML = "le " + (day + 4) + "/" + month + " :<br>" + Math.round(temperature_5days_4) + "°C";
+            document.getElementById("meteo_5days_1_date").innerHTML = "Demain :<br>";
+            document.getElementById("meteo_5days_1").innerHTML = Math.round(temperature_5days_1) + "°C";
+            document.getElementById("meteo_5days_2_date").innerHTML = "le " + (day + 2) + "/" + month + " :<br>";
+            document.getElementById("meteo_5days_2").innerHTML = Math.round(temperature_5days_2) + "°C";
+            document.getElementById("meteo_5days_3_date").innerHTML = "le " + (day + 3) + "/" + month + " :<br>";
+            document.getElementById("meteo_5days_3").innerHTML = Math.round(temperature_5days_3) + "°C";
+            document.getElementById("meteo_5days_4_date").innerHTML = "le " + (day + 4) + "/" + month + " :<br>";
+            document.getElementById("meteo_5days_4").innerHTML = Math.round(temperature_5days_4) + "°C";
 
 
             document.getElementById("icon_0").src = src_0;

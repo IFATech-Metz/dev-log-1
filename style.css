@@ -37,7 +37,16 @@ header{
     margin:2.5%;
 }
 
-.chosen_city{
-    display:hidden;
+#chosen_city{
+    display:none;
 }
 
+#chosen_city .col{
+    border : 5px outset black;
+    background-color: #eeeeee;
+    padding : 5%;
+}
+
+input{
+    text-align:center;
+}
