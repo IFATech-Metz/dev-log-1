@@ -6,8 +6,6 @@ var xhr = new XMLHttpRequest();
 
 // api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon} 
 
-// GEOLOC
-
 // METEO LOCALE
 
 var base_url = "http://api.openweathermap.org/data/2.5/weather";
@@ -20,8 +18,12 @@ var current_date = new Date();
 var year = current_date.getFullYear();
 var month = current_date.getMonth() + 1;
 var day = current_date.getDate();
+var hour = current_date.getHours();
+var minute = current_date.getMinutes();
 
-var day_now = day + "/" + month + "/" + year;
+var day_now =  day + "/" + month + "/" + year;
+var hour_now = hour + ":" + minute;
+
 
 function get_url() {
     return base_url + "?"
@@ -41,7 +43,7 @@ function init_page() {
             var icon = response.weather[0].icon;
             var src = "http://openweathermap.org/img/w/" + icon + ".png";
 
-            document.getElementById("meteo").innerHTML = "Température à " + city + " : <br>" + temperature + "°C";
+            document.getElementById("meteo").innerHTML = "Température à " + hour_now + " à " + city + " : <br>" + Math.round(temperature) + "°C";
             document.getElementById("icon").src = src;
 
         }
@@ -70,13 +72,13 @@ function get_temperature_5days() {
 
 
             var response_5days = JSON.parse(this.responseText);
+
             var temperature_5days_0 = response_5days.list[0].main.temp;
             var temperature_5days_1 = response_5days.list[8].main.temp;
             var temperature_5days_2 = response_5days.list[16].main.temp;
             var temperature_5days_3 = response_5days.list[24].main.temp;
             var temperature_5days_4 = response_5days.list[32].main.temp;
-            var temperature_5days_4 = response_5days.list[39].main.temp;
-
+            
 
             var icon_0 = response_5days.list[0].weather[0].icon;
             var src_0 = "http://openweathermap.org/img/w/" + icon_0 + ".png";
@@ -89,13 +91,17 @@ function get_temperature_5days() {
             var icon_4 = response_5days.list[32].weather[0].icon;
             var src_4 = "http://openweathermap.org/img/w/" + icon_4 + ".png";
 
+
+
+
+
             document.getElementById("meteo_5days").innerHTML = "Aujourd'hui à " + city + " : <br><br>";
-            document.getElementById("meteo_5days_0").innerHTML = temperature_5days_0 + "°C";
+            document.getElementById("meteo_5days_0").innerHTML = Math.round(temperature_5days_0) + "°C";
             document.getElementById("meteo_5days_prev").innerHTML = "Prévisions des prochains jours : <br><br>";
-            document.getElementById("meteo_5days_1").innerHTML = "Demain : " + temperature_5days_1 + "°C";
-            document.getElementById("meteo_5days_2").innerHTML = "Le " + (day + 2) + "/" + month + " : " + temperature_5days_2 + "°C";
-            document.getElementById("meteo_5days_3").innerHTML = "Le " + (day + 3) + "/" + month + " : " + temperature_5days_3 + "°C";
-            document.getElementById("meteo_5days_4").innerHTML = "Le " + (day + 4) + "/" + month + " : " + temperature_5days_4 + "°C";
+            document.getElementById("meteo_5days_1").innerHTML = "Demain :<br>" + Math.round(temperature_5days_1) + "°C";
+            document.getElementById("meteo_5days_2").innerHTML = "le " + (day + 2) + "/" + month + " :<br>" + Math.round(temperature_5days_2) + "°C";
+            document.getElementById("meteo_5days_3").innerHTML = "le " + (day + 3) + "/" + month + " :<br>" + Math.round(temperature_5days_3) + "°C";
+            document.getElementById("meteo_5days_4").innerHTML = "le " + (day + 4) + "/" + month + " :<br>" + Math.round(temperature_5days_4) + "°C";
 
 
             document.getElementById("icon_0").src = src_0;
@@ -111,3 +117,8 @@ function get_temperature_5days() {
     xhr.send()
 
 }
+
+// Points à voir :
+//   -->   Afficher / masquer les données de ville choisie
+//   -->   Geolocalisation
+
