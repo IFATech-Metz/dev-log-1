@@ -119,7 +119,7 @@ function get_temperature_5days() {
             document.getElementById("icon_3").src = src_3;
             document.getElementById("icon_4").src = src_4;
         }
-        else if (this.status != 200) {
+        else {
             document.getElementById("chosen_city").style.display = "none";
             document.getElementById("chosen_city_error").style.display = "block";
             document.getElementById("chosen_city_error").innerHTML = "champ manquant ou incorrect";
