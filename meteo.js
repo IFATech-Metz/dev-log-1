@@ -70,68 +70,67 @@ function get_url_5days() {
 function get_temperature_5days() {
     city = document.getElementById("ville").value;
 
-    if ((document.getElementById("ville").value) != ""){
-        document.getElementById("chosen_city").style.display = "block";
-    }
-    else{
-        alert("Saisissez une ville !");
-    }
-
-
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+
+            document.getElementById("chosen_city").style.display = "block";
+            document.getElementById("chosen_city_error").style.display = "none";
 
 
             var response_5days = JSON.parse(this.responseText);
 
-            var temperature_5days_0 = response_5days.list[0].main.temp;
-            var temperature_5days_1 = response_5days.list[8].main.temp;
-            var temperature_5days_2 = response_5days.list[16].main.temp;
-            var temperature_5days_3 = response_5days.list[24].main.temp;
-            var temperature_5days_4 = response_5days.list[32].main.temp;
-            
 
-            var icon_0 = response_5days.list[0].weather[0].icon;
-            var src_0 = "http://openweathermap.org/img/w/" + icon_0 + ".png";
-            var icon_1 = response_5days.list[8].weather[0].icon;
-            var src_1 = "http://openweathermap.org/img/w/" + icon_1 + ".png";
-            var icon_2 = response_5days.list[16].weather[0].icon;
-            var src_2 = "http://openweathermap.org/img/w/" + icon_2 + ".png";
-            var icon_3 = response_5days.list[24].weather[0].icon;
-            var src_3 = "http://openweathermap.org/img/w/" + icon_3 + ".png";
-            var icon_4 = response_5days.list[32].weather[0].icon;
-            var src_4 = "http://openweathermap.org/img/w/" + icon_4 + ".png";
+                var temperature_5days_0 = response_5days.list[0].main.temp;
+                var temperature_5days_1 = response_5days.list[8].main.temp;
+                var temperature_5days_2 = response_5days.list[16].main.temp;
+                var temperature_5days_3 = response_5days.list[24].main.temp;
+                var temperature_5days_4 = response_5days.list[32].main.temp;
+                
 
-
-
+                var icon_0 = response_5days.list[0].weather[0].icon;
+                var src_0 = "http://openweathermap.org/img/w/" + icon_0 + ".png";
+                var icon_1 = response_5days.list[8].weather[0].icon;
+                var src_1 = "http://openweathermap.org/img/w/" + icon_1 + ".png";
+                var icon_2 = response_5days.list[16].weather[0].icon;
+                var src_2 = "http://openweathermap.org/img/w/" + icon_2 + ".png";
+                var icon_3 = response_5days.list[24].weather[0].icon;
+                var src_3 = "http://openweathermap.org/img/w/" + icon_3 + ".png";
+                var icon_4 = response_5days.list[32].weather[0].icon;
+                var src_4 = "http://openweathermap.org/img/w/" + icon_4 + ".png";
 
 
-            document.getElementById("meteo_5days_0_date").innerHTML = "Aujourd'hui à " + city + " : <br><br>";
-            document.getElementById("meteo_5days_0").innerHTML = Math.round(temperature_5days_0) + "°C";
-            document.getElementById("meteo_5days_prev").innerHTML = "Prévisions des prochains jours : <br><br>";
-            document.getElementById("meteo_5days_1_date").innerHTML = "Demain :<br>";
-            document.getElementById("meteo_5days_1").innerHTML = Math.round(temperature_5days_1) + "°C";
-            document.getElementById("meteo_5days_2_date").innerHTML = "le " + (day + 2) + "/" + month + " :<br>";
-            document.getElementById("meteo_5days_2").innerHTML = Math.round(temperature_5days_2) + "°C";
-            document.getElementById("meteo_5days_3_date").innerHTML = "le " + (day + 3) + "/" + month + " :<br>";
-            document.getElementById("meteo_5days_3").innerHTML = Math.round(temperature_5days_3) + "°C";
-            document.getElementById("meteo_5days_4_date").innerHTML = "le " + (day + 4) + "/" + month + " :<br>";
-            document.getElementById("meteo_5days_4").innerHTML = Math.round(temperature_5days_4) + "°C";
+
+                document.getElementById("meteo_5days_0_date").innerHTML = "Aujourd'hui à " + city + " : <br><br>";
+                document.getElementById("meteo_5days_0").innerHTML = Math.round(temperature_5days_0) + "°C";
+                document.getElementById("meteo_5days_prev").innerHTML = "Prévisions des prochains jours : <br><br>";
+                document.getElementById("meteo_5days_1_date").innerHTML = "Demain :<br>";
+                document.getElementById("meteo_5days_1").innerHTML = Math.round(temperature_5days_1) + "°C";
+                document.getElementById("meteo_5days_2_date").innerHTML = "le " + (day + 2) + "/" + month + " :<br>";
+                document.getElementById("meteo_5days_2").innerHTML = Math.round(temperature_5days_2) + "°C";
+                document.getElementById("meteo_5days_3_date").innerHTML = "le " + (day + 3) + "/" + month + " :<br>";
+                document.getElementById("meteo_5days_3").innerHTML = Math.round(temperature_5days_3) + "°C";
+                document.getElementById("meteo_5days_4_date").innerHTML = "le " + (day + 4) + "/" + month + " :<br>";
+                document.getElementById("meteo_5days_4").innerHTML = Math.round(temperature_5days_4) + "°C";
 
 
-            document.getElementById("icon_0").src = src_0;
-            document.getElementById("icon_1").src = src_1;
-            document.getElementById("icon_2").src = src_2;
-            document.getElementById("icon_3").src = src_3;
-            document.getElementById("icon_4").src = src_4;
+                document.getElementById("icon_0").src = src_0;
+                document.getElementById("icon_1").src = src_1;
+                document.getElementById("icon_2").src = src_2;
+                document.getElementById("icon_3").src = src_3;
+                document.getElementById("icon_4").src = src_4;
+            }
+            else if (this.status != 200){
+                document.getElementById("chosen_city").style.display = "none";
+                document.getElementById("chosen_city_error").style.display = "block";
+                document.getElementById("chosen_city_error").innerHTML = "Nom de ville manquant ou incorrect";
+            };
+    }
 
-        }
-    };
 
     xhr.open("GET", get_url_5days(), true)
     xhr.send()
 
-}
+};
 
 // Points à voir :
 //   -->   Afficher / masquer les données de ville choisie

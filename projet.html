@@ -13,24 +13,29 @@
 
 <body onload="init_page()">
 
-<header>
-        <img src="img/sunset.png">
-        <h1>Application Météo</h1>
-</header>
+    <header>
 
-<div class="container">
+            <img src="img/sunset.png">
 
-    <div class="row">
+            <h1>Application Météo</h1>
 
-        <div class="col">
+    </header>
 
-            <div id="date_now"></div>
-            
-            <div id="current_meteo">
+    <div class="container">
 
-                <div id="meteo"></div>
+        <div class="row">
 
-                <img src="" alt="" id="icon">
+            <div class="col">
+
+                <div id="date_now"></div>
+
+                <div id="current_meteo">
+
+                    <div id="meteo"></div>
+
+                    <img src="" alt="" id="icon">
+
+                </div>
 
             </div>
 
@@ -38,66 +43,70 @@
 
     </div>
 
-</div>
+    <div class="container">
 
-<div class="container">
+            <p>Nom de la ville :
+                <input type="text" placeholder ="Saisissez une ville" id="ville" value="">
+                <button class="btn btn-warning" type="button" onclick="get_temperature_5days()">Envoyer</button>
 
-        <p>Nom de la ville :
-            <input type="text" placeholder ="Saisissez une ville" id="ville" value="">
-            <button class="btn btn-warning" type="button" onclick="get_temperature_5days()">Envoyer</button>
+            </p>
 
-        </p>
+        <div id="chosen_city_error"></div>
 
-    <div id="chosen_city">
-        <div class="row">
+        <div id="chosen_city">
 
-            <div class="col">
-                <div id="meteo_5days_0_date"></div>
+            <div class="row">
 
-                <img src="" alt="" id="icon_0">
+                <div class="col">
+                    <h2 id="meteo_5days_0_date"></h2>
 
-                <div id="meteo_5days_0"></div>
+                    <img src="" alt="" id="icon_0">
+
+                    <div id="meteo_5days_0"></div>
+                </div>
+
             </div>
 
-        </div>
+            <h2 id="meteo_5days_prev"></h2>
 
-        <h2 id="meteo_5days_prev"></h2>
+            <div class="row">
 
-        <div class="row">
+                <div class="col">
+                    <div id="meteo_5days_1_date"></div>
 
-            <div class="col">
-                <div id="meteo_5days_1_date"></div>
+                    <img src="" alt="" id="icon_1">
 
-                <img src="" alt="" id="icon_1">
+                    <div id="meteo_5days_1"></div>
+                </div>
 
-                <div id="meteo_5days_1"></div>
+                <div class="col">
+                    <div id="meteo_5days_2_date"></div>
+
+                    <img src="" alt="" id="icon_2">
+
+                    <div id="meteo_5days_2"></div>
+                </div>
+
+                <div class="col">
+                    <div id="meteo_5days_3_date"></div>
+
+                    <img src="" alt="" id="icon_3">
+
+                    <div id="meteo_5days_3"></div>
+                </div>
+
+                <div class="col">
+                    <div id="meteo_5days_4_date"></div>
+
+                    <img src="" alt="" id="icon_4">
+
+                    <div id="meteo_5days_4"></div>
+                </div>
+
             </div>
 
-            <div class="col">
-                <div id="meteo_5days_2_date"></div>
-
-                <img src="" alt="" id="icon_2">
-
-                <div id="meteo_5days_2"></div>
-            </div>
-
-            <div class="col">
-                <div id="meteo_5days_3_date"></div>
-
-                <img src="" alt="" id="icon_3">
-
-                <div id="meteo_5days_3"></div>
-            </div>
-
-            <div class="col">
-                <div id="meteo_5days_4_date"></div>
-
-                <img src="" alt="" id="icon_4">
-
-                <div id="meteo_5days_4"></div>
-            </div>
-        </div>
     </div>
+
 </body>
 
 </html>
