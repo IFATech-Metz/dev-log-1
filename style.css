@@ -1,6 +1,7 @@
 .col{
     text-align: center;
-    margin: 2.5%;
+    margin: 5%;
+    padding: 5%;
 }
 
 .container{
@@ -12,7 +13,8 @@
 
 h1, h2{
     text-align: center;
-    padding: 1%;
+
+
 }
 
 p{
@@ -25,12 +27,9 @@ p{
     margin: 2.5%;
     padding : 2.5%;
     background-color: #eeeeee;
-
 }
 
-#date_now{
-    margin-bottom : 2.5%;
-}
+
 
 header{
     text-align :center;
@@ -41,12 +40,19 @@ header{
     display:none;
 }
 
+#chosen_city_error{
+    display:    none;
+    text-align: center;
+    color: red;
+    font-size: 1.5em;
+}
+
 #chosen_city .col{
     border : 5px outset black;
     background-color: #eeeeee;
-    padding : 5%;
 }
 
 input{
     text-align:center;
 }
+
