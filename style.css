@@ -25,7 +25,6 @@ p{
     margin: 2.5%;
     padding : 2.5%;
     background-color: #eeeeee;
-
 }
 
 #date_now{
@@ -37,6 +36,23 @@ header{
     margin:2.5%;
 }
 
-.chosen_city{
-    display:hidden;
+#chosen_city{
+    display:none;
+}
+
+#chosen_city_error{
+    display:    none;
+    text-align: center;
+    color: red;
+    font-size: 1.5em;
+}
+
+#chosen_city .col{
+    border : 5px outset black;
+    background-color: #eeeeee;
+    padding : 5%;
+}
+
+input{
+    text-align:center;
 }

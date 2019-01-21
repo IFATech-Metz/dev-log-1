@@ -32,7 +32,10 @@ function get_url() {
         + "appid=" + appid;
 }
 
+
+
 function init_page() {
+
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
 
@@ -70,8 +73,12 @@ function get_temperature_5days() {
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
 
+            document.getElementById("chosen_city").style.display = "block";
+            document.getElementById("chosen_city_error").style.display = "none";
+
 
             var response_5days = JSON.parse(this.responseText);
+
 
             var temperature_5days_0 = response_5days.list[0].main.temp;
             var temperature_5days_1 = response_5days.list[8].main.temp;
@@ -93,15 +100,17 @@ function get_temperature_5days() {
 
 
 
-
-
-            document.getElementById("meteo_5days").innerHTML = "Aujourd'hui à " + city + " : <br><br>";
+            document.getElementById("meteo_5days_0_date").innerHTML = "Aujourd'hui à " + city + " : <br><br>";
             document.getElementById("meteo_5days_0").innerHTML = Math.round(temperature_5days_0) + "°C";
             document.getElementById("meteo_5days_prev").innerHTML = "Prévisions des prochains jours : <br><br>";
-            document.getElementById("meteo_5days_1").innerHTML = "Demain :<br>" + Math.round(temperature_5days_1) + "°C";
-            document.getElementById("meteo_5days_2").innerHTML = "le " + (day + 2) + "/" + month + " :<br>" + Math.round(temperature_5days_2) + "°C";
-            document.getElementById("meteo_5days_3").innerHTML = "le " + (day + 3) + "/" + month + " :<br>" + Math.round(temperature_5days_3) + "°C";
-            document.getElementById("meteo_5days_4").innerHTML = "le " + (day + 4) + "/" + month + " :<br>" + Math.round(temperature_5days_4) + "°C";
+            document.getElementById("meteo_5days_1_date").innerHTML = "Demain :<br>";
+            document.getElementById("meteo_5days_1").innerHTML = Math.round(temperature_5days_1) + "°C";
+            document.getElementById("meteo_5days_2_date").innerHTML = "le " + (day + 2) + "/" + month + " :<br>";
+            document.getElementById("meteo_5days_2").innerHTML = Math.round(temperature_5days_2) + "°C";
+            document.getElementById("meteo_5days_3_date").innerHTML = "le " + (day + 3) + "/" + month + " :<br>";
+            document.getElementById("meteo_5days_3").innerHTML = Math.round(temperature_5days_3) + "°C";
+            document.getElementById("meteo_5days_4_date").innerHTML = "le " + (day + 4) + "/" + month + " :<br>";
+            document.getElementById("meteo_5days_4").innerHTML = Math.round(temperature_5days_4) + "°C";
 
 
             document.getElementById("icon_0").src = src_0;
@@ -109,15 +118,21 @@ function get_temperature_5days() {
             document.getElementById("icon_2").src = src_2;
             document.getElementById("icon_3").src = src_3;
             document.getElementById("icon_4").src = src_4;
-
         }
-    };
+        else if (this.status != 200) {
+            document.getElementById("chosen_city").style.display = "none";
+            document.getElementById("chosen_city_error").style.display = "block";
+            document.getElementById("chosen_city_error").innerHTML = "champ manquant ou incorrect";
+        };
+    }
+
 
     xhr.open("GET", get_url_5days(), true)
     xhr.send()
 
-}
+};
 
 // Points à voir :
 //   -->   Afficher / masquer les données de ville choisie
 //   -->   Geolocalisation
+
