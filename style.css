@@ -1,8 +1,42 @@
-#url {
-    color: red;
-    display: none;
+.col{
+    text-align: center;
+    margin: 2.5%;
 }
-#meteo{
-    background: black;
-    color: white;
+
+.container{
+    border: 10px inset black;
+    margin: 2.5%;
+    background-color: #dddddd;
+
+}
+
+h1, h2{
+    text-align: center;
+    padding: 1%;
+}
+
+p{
+    text-align: center;
+    padding:2.5%;
+}
+
+#current_meteo{
+    border : 5px outset black;
+    margin: 2.5%;
+    padding : 2.5%;
+    background-color: #eeeeee;
+
+}
+
+#date_now{
+    margin-bottom : 2.5%;
+}
+
+header{
+    text-align :center;
+    margin:2.5%;
+}
+
+.chosen_city{
+    display:hidden;
 }
