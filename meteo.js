@@ -75,6 +75,7 @@ function get_temperature_5days() {
 
             document.getElementById("chosen_city").style.display = "block";
             document.getElementById("chosen_city_error").style.display = "none";
+            document.getElementById("local").style.display = "none";
 
 
             var response_5days = JSON.parse(this.responseText);
