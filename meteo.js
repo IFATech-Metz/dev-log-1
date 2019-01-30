@@ -120,11 +120,11 @@ function get_temperature_5days()
                 document.getElementById("meteo_5days_prev").innerHTML = "Prévisions des prochains jours : <br><br>";
                 document.getElementById("meteo_5days_1_date").innerHTML = "Demain :<br>";
                 document.getElementById("meteo_5days_1").innerHTML = Math.round(temperature_5days_1) + "°C";
-                document.getElementById("meteo_5days_2_date").innerHTML = "le " + (day + 2) + "/" + month + " :<br>";
+                document.getElementById("meteo_5days_2_date").innerHTML = "J+2 :<br>";
                 document.getElementById("meteo_5days_2").innerHTML = Math.round(temperature_5days_2) + "°C";
-                document.getElementById("meteo_5days_3_date").innerHTML = "le " + (day + 3) + "/" + month + " :<br>";
+                document.getElementById("meteo_5days_3_date").innerHTML = "J+3 :<br>";
                 document.getElementById("meteo_5days_3").innerHTML = Math.round(temperature_5days_3) + "°C";
-                document.getElementById("meteo_5days_4_date").innerHTML = "le " + (day + 4) + "/" + month + " :<br>";
+                document.getElementById("meteo_5days_4_date").innerHTML = "J+4 :<br>";
                 document.getElementById("meteo_5days_4").innerHTML = Math.round(temperature_5days_4) + "°C";
 
 
