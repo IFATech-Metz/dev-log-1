@@ -136,4 +136,3 @@ function get_temperature_5days() {
 // Points à voir :
 //   -->   Afficher / masquer les données de ville choisie
 //   -->   Geolocalisation
-
