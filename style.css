@@ -1,58 +1,80 @@
-.col{
-    text-align: center;
-    margin: 5%;
-    padding: 5%;
+.col, .col-6
+{
+    text-align:         center;
+    margin-left:        auto;
+    margin-right:       auto;
+    margin-top:         2.5%;
+    margin-bottom:      2.5%;
+    padding:            2.5%;
+    border:             5px outset black;
+    background-color:   #eeeeee;
 }
 
-.container{
-    border: 10px inset black;
-    margin: 2.5%;
-    background-color: #dddddd;
+.container
+{
+    border:             10px inset black;
+    margin:             2.5%;
+    background-color:   #dddddd;
 
 }
 
-h1, h2{
-    text-align: center;
-
-
+h1, h2
+{
+    text-align:         center;
 }
 
-p{
-    text-align: center;
-    padding:2.5%;
+.col-9
+{
+    margin-left:        auto;
+    margin-right:       auto;
+    text-align:         center;
+    padding:            2.5%;
 }
 
-#current_meteo{
-    border : 5px outset black;
-    margin: 2.5%;
-    padding : 2.5%;
-    background-color: #eeeeee;
+header
+{
+    text-align:         center;
+    margin:             2.5%;
 }
 
-
-
-header{
-    text-align :center;
-    margin:2.5%;
+#chosen_city
+{
+    display:            none;
 }
 
-#chosen_city{
-    display:none;
+#chosen_city_error
+{
+    display:            none;
+    text-align:         center;
+    color:              red;
+    font-size:          1.5em;
 }
 
-#chosen_city_error{
-    display:    none;
-    text-align: center;
-    color: red;
-    font-size: 1.5em;
+#chosen_city .col
+{
+    border:             5px outset black;
+    background-color:   #eeeeee;
+    margin-left:        2.5%;
+    margin-right:       2.5%;
+    margin-bottom:      2.5%;
 }
 
-#chosen_city .col{
-    border : 5px outset black;
-    background-color: #eeeeee;
+#chosen_city .col-6 
+{
+    border:             5px outset black;
+    background-color:   #eeeeee;
+    margin-left:        auto;
+    margin-right:       auto;
+    margin-top:         2.5%;
+    margin-bottom:      2.5%;
 }
 
-input{
-    text-align:center;
+input
+{
+    text-align:         center;
 }
 
+button
+{
+    margin-bottom:      25px;
+}

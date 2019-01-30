@@ -15,59 +15,72 @@
 
     <header>
 
-            <img src="img/sunset.png">
-
-            <h1>Application Météo</h1>
+            <h1>Appli</h1>
+            <img src="img/meteo.png">
+            <h1>Météo</h1>
 
     </header>
 
     <div class="container">
-
+        <div class="date_heure"></div>
         <div class="row">
 
-            <div class="col">
+            <div class="col-6">
 
                 <div id="date_now"></div>
+                <div id="city_now"></div>
 
-                <div id="current_meteo">
 
-                    <div id="meteo"></div>
+                <img src="" alt="" id="icon">
 
-                    <img src="" alt="" id="icon">
+                <div id="meteo"></div>
 
-                </div>
 
             </div>
 
+        </div>
+       
         </div>
 
     </div>
 
     <div class="container">
+        
+        <div class="row">
 
-            <p>Nom de la ville :
-                <input type="text" placeholder ="Saisissez une ville" id="ville" value="">
-                <button class="btn btn-warning" type="button" onclick="get_temperature_5days()">Envoyer</button>
+            <div class="col-9">
 
-            </p>
+                <h2>Choisissez une ville :</h2><br>
+                <p><input type="text" placeholder ="Saisir une ville" id="ville" value=""></p>
+                <div><button class="btn btn-warning" type="button" onclick="get_temperature_5days()">Afficher la météo de cette ville</button></div>
+
+            </div>
+
+        </div>
 
         <div id="chosen_city_error"></div>
 
         <div id="chosen_city">
+        
+        <hr>
 
             <div class="row">
 
-                <div class="col">
-                    <h2 id="meteo_5days_0_date"></h2>
+                <div class="col-6">
+                    <div id="meteo_5days_0_date"></div>
 
                     <img src="" alt="" id="icon_0">
 
                     <div id="meteo_5days_0"></div>
                 </div>
 
-            </div>
+            </div><br>
 
-            <h2 id="meteo_5days_prev"></h2>
+            <div class="row">
+
+                <h2 class="col-9" id="meteo_5days_prev"></h2>
+
+            </div>
 
             <div class="row">
 

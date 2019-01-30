@@ -4,7 +4,7 @@ var xhr = new XMLHttpRequest();
 // http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}?
 // date=1527811200&opacity=0.9&fill_bound=true&appid={api_key}
 
-// api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon} 
+// api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}
 
 // METEO LOCALE
 
@@ -21,11 +21,14 @@ var day = current_date.getDate();
 var hour = current_date.getHours();
 var minute = current_date.getMinutes();
 
-var day_now =  day + "/" + month + "/" + year;
+var day_now = day + "/" + month + "/" + year;
 var hour_now = hour + ":" + minute;
 
 
-function get_url() {
+
+
+function get_url()
+{
     return base_url + "?"
         + "q=" + city + "&"
         + "units=" + units + "&"
@@ -34,22 +37,30 @@ function get_url() {
 
 
 
-function init_page() {
+function init_page()
+{
 
-    xhr.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
+    xhr.onreadystatechange = function ()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
 
-            document.getElementById("date_now").innerHTML = day_now;
+            document.getElementById("date_now").innerHTML = "Température du :<br>" + day_now + " à " + hour_now;
+            document.getElementById("city_now").innerHTML = city;
 
             var response = JSON.parse(this.responseText);
             var temperature = response.main.temp;
             var icon = response.weather[0].icon;
+            // icones
+
             var src = "http://openweathermap.org/img/w/" + icon + ".png";
 
-            document.getElementById("meteo").innerHTML = "Température à " + hour_now + " à " + city + " : <br>" + Math.round(temperature) + "°C";
+
+            document.getElementById("meteo").innerHTML = Math.round(temperature) + "°C";
             document.getElementById("icon").src = src;
 
         }
+
     };
 
     xhr.open("GET", get_url(), true)
@@ -60,18 +71,22 @@ function init_page() {
 
 var base_url_5days = "http://api.openweathermap.org/data/2.5/forecast";
 
-function get_url_5days() {
+function get_url_5days()
+{
     return base_url_5days + "?"
         + "q=" + city + "&"
         + "units=" + units + "&"
         + "appid=" + appid;
 }
 
-function get_temperature_5days() {
+function get_temperature_5days()
+{
     city = document.getElementById("ville").value;
 
-    xhr.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
+    xhr.onreadystatechange = function ()
+    {
+        if (this.readyState == 4 && this.status == 200)
+        {
 
             document.getElementById("chosen_city").style.display = "block";
             document.getElementById("chosen_city_error").style.display = "none";
@@ -85,7 +100,7 @@ function get_temperature_5days() {
                 var temperature_5days_2 = response_5days.list[16].main.temp;
                 var temperature_5days_3 = response_5days.list[24].main.temp;
                 var temperature_5days_4 = response_5days.list[32].main.temp;
-                
+
 
                 var icon_0 = response_5days.list[0].weather[0].icon;
                 var src_0 = "http://openweathermap.org/img/w/" + icon_0 + ".png";
@@ -119,11 +134,13 @@ function get_temperature_5days() {
                 document.getElementById("icon_3").src = src_3;
                 document.getElementById("icon_4").src = src_4;
             }
-            else if (this.status != 200){
+
+        else
+        {
                 document.getElementById("chosen_city").style.display = "none";
                 document.getElementById("chosen_city_error").style.display = "block";
                 document.getElementById("chosen_city_error").innerHTML = "Nom de ville manquant ou incorrect";
-            };
+        };
     }
 
 
